@@ -1,0 +1,67 @@
+/* General Page Styling */
+body {
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  gap: 40px;
+}
+
+/* 1. Glowing Text */
+.glow {
+  font-size: 40px;
+  color: #fff;
+  text-shadow: 0 0 5px #00ffcc,
+               0 0 10px #00ffcc,
+               0 0 20px #00ffcc,
+               0 0 40px #00ffcc;
+  animation: glowEffect 1.5s ease-in-out infinite alternate;
+}
+@keyframes glowEffect {
+  from { text-shadow: 0 0 5px #00ffcc; }
+  to   { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
+}
+
+/* 2. Typing Animation */
+.typing {
+  font-size: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #ffcc00;
+  width: 0;
+  animation: typing 4s steps(25, end) forwards, blink 0.7s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 25ch; } /* ch = number of characters */
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* 3. Wavy Text */
+.wave {
+  font-size: 32px;
+  display: inline-block;
+}
+.wave span {
+  display: inline-block;
+  animation: waveAnim 1.5s infinite;
+}
+.wave span:nth-child(1) { animation-delay: 0s; }
+.wave span:nth-child(2) { animation-delay: 0.1s; }
+.wave span:nth-child(3) { animation-delay: 0.2s; }
+.wave span:nth-child(4) { animation-delay: 0.3s; }
+.wave span:nth-child(5) { animation-delay: 0.4s; }
+.wave span:nth-child(6) { animation-delay: 0.5s; }
+.wave span:nth-child(7) { animation-delay: 0.6s; }
+.wave span:nth-child(8) { animation-delay: 0.7s; }
+
+@keyframes waveAnim {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-15px); }
+}
